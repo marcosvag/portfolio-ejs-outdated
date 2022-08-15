@@ -248,6 +248,9 @@
     h2 {
       font-size: 24px;
     }
+    p{
+      font-size: 14px;
+    }
     #projects-title , #about-title {
       margin-block-start: 2.85em;
     }
