@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Marcos Garcia - Web Dev</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Marcos Garcia is a web developer, and here you can find a brief description of him, his most recent work, and contact information.">
+    <meta property="og:url" content="see live">
+    <meta property="og:title" content="Marcos Garcia - Web Developer">
+    <meta property="og:description" content="Building and updating your online presence on the web.">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/1adeb8691f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="light-theme">
+    <nav>
+      <ul id="navList" class="centerXY">
+        <li class="navItem">
+            <span id="nav-home" data-id="home"class="menu-item centerXY active"><%= content["nav"][0]%></span>
+        </li>
+        <li class="navItem marginLeft">
+            <span id="nav-about" data-id="about" class="menu-item centerXY"><%= content["nav"][1]%></span>
+        </li>
+        <li class="navItem marginLeft">
+            <span id="nav-projects" data-id="projects" class="menu-item centerXY"><%= content["nav"][2]%></span>
+        </li>
+        <li class="navItem marginLeft">
+            <span id="nav-contact" data-id="contact" class="menu-item centerXY"><%= content["nav"][3]%></span>
+        </li>
+        <li class="navItem marginLeft">
+          <i id="theme" class="fa-solid fa-moon menu-item centerXY"></i>
+        </li>
+        <li class="navItem marginLeft">
+           <span id="pt" class="menu-item">PT</span> <span id="en" class="menu-item">EN</span>
+        </li>
+      </ul>
+    </nav>
+    <main id="main-content">
+      <section id="home" class="max-WH centerXY active">
+        <div id="home-container" class="flex centerXY directionCollumn">
+          <header><h1 id="introduction" class="centerText"><%= content["homeSection"]["introduction"][0] %> <strong>Marcos</strong>,<br>
+            <%= content["homeSection"]["introduction"][1] %> <strong><%= content["homeSection"]["introduction"][2] %></strong>!</h1></header>
+          <a href="resume.txt" download="MarcosGarcia-resume"
+            ><span id="resume"><%= content["homeSection"]["resume"] %></span></a
+          >
+        </div>
+      </section>
+      <section id="about" class="max-WH centerXY">
+        <div id="about-container" class="flex centerXY directionCollumn">
+          <header><h2 id="about-title"><%= content["aboutSection"]["title"]%></h2></header>
+        <% content["aboutSection"]["aboutInfo"].forEach(el => { %> 
+            <p class="about-info">
+                <%= el %>
+            </p>
+        <% }) %>
+        </div>
+      </section>
+      <section id="projects" class="centerXY max-WH directionCollumn">
+        <header><h2 id="projects-title"><%= content["projectsSection"]["title"] %></h2></header>
+        <div id="projects-container">
+            <% for(let e = 0; e < content["projectsSection"]["projects"].length; e++) { %>
+          <div class="flex directionCollumn project-container">
+            <img
+              src="<%= content["projectsSection"]["projects"][e]["img"] %>"
+              alt=""
+            />
+            <span class="project-description-container flex centerXY directionCollumn">
+              <ul class="tools-list flex centerXY">
+                <% content["projectsSection"]["projects"][e]["tools"].forEach(el => { %>
+                     <li><i class="fa-brands <%= el %> fa-xl" ></i></li> 
+                <% }) %>
+              </ul>
+              <p class="project-description" tabindex="0"> <%= content["projectsSection"]["projects"][e]["projectDescription"] %></p></span
+            >
+            <span class="project-links flex centerXY">
+              <a href="<%= content["projectsSection"]["projects"][e]["links"][0] %>" target="_blank">
+                <i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+              </a>
+              <a href="<%= content["projectsSection"]["projects"][e]["links"][1] %>" target="_blank"class="see-live"> See Live </a>
+            </span>
+          </div>
+          <%}%>
+        </div>
+        <a href="https://github.com/marcosvag" target="_blank" id="see-more"><span><%= content["projectsSection"]["more"] %></span></a>
+      </section>
+      <section id="contact" class="centerXY max-WH">
+        <div id="contact-container" class="flex centerXY directionCollumn">
+          <header><h2 id="contact-title"><%= content["contactSection"]["title"] %></h2></header>
+          <% content["contactSection"]["contactPhrase"].forEach( el => { %>
+          <p class="centerText contact-phrase">
+            <%= el %>
+          </p>
+          <% }) %>
+          <form
+            action="https://formsubmit.co/16fe61fca98a84943519c1e983b7fad0"
+            method="POST"
+            id="contact-form"
+            class="flex centerXY directionCollumn"
+          >
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="<%= content["contactSection"]["formPlaceholder"][0] %>"
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="<%= content["contactSection"]["formPlaceholder"][1] %>"
+            />
+            <textarea
+              name="message"
+              id="message"
+              cols="24"
+              rows="9"
+              required
+              placeholder="<%= content["contactSection"]["formPlaceholder"][2] %>"
+            ></textarea>
+            <button type="submit" class="flex centerXY"><%= content["contactSection"]["button"] %></button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="flex centerXY directionCollumn">
+      <ul id="contact-list" class="flex centerXY">
+        <li class="footer-item">
+          <a href="https://github.com/marcosvag" target="_blank" class="contact-link"
+            ><span class="social flex centerXY"
+              ><i
+                class="fa-brands fa-github fa-xl"
+                aria-hidden="true"
+              ></i></span
+          ></a>
+        </li>
+        <li class="footer-item marginLeft">
+          <a href="https://www.linkedin.com/in/marcosagdev" target="_blank" class="contact-link"
+            ><span class="social flex centerXY"
+              ><i
+                class="fa-brands fa-linkedin fa-xl"
+                aria-hidden="true"
+              ></i></span
+          ></a>
+        </li>
+        <li class="footer-item marginLeft">
+          <a href="#" target="_blank" class="contact-link"
+            ><span class="social flex centerXY"
+              ><i class="fa fa-twitter fa-xl" aria-hidden="true"></i></span
+          ></a>
+        </li>
+      </ul>
+      <p id="footer-text">© Marcos Garcia </p>
+    </footer>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
