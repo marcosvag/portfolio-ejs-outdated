@@ -95,10 +95,9 @@
       <section id="contact" class="centerXY max-WH">
         <div id="contact-container" class="flex centerXY directionCollumn">
           <header><h2 id="contact-title"><%= content["contactSection"]["title"] %></h2></header>
-          <% content["contactSection"]["contactPhrase"].forEach( el => { %>
+          <% content["contactSection"]["contactPhrase"].forEach( (el, index) => { %>
           <p class="centerText contact-phrase">
-            <%= el %>
-          </p>
+            <%= el %> <% if(index == 1){%><%- " <strong>marcosag.dev@gmail.com</strong>" %><%}%></p>
           <% }) %>
           <form
             action="https://formsubmit.co/marcosag.dev@gmail.com"
