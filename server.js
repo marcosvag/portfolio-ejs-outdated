@@ -1,4 +1,5 @@
 const express = require('express');
+const expressLayouts = require('express-ejs-layouts')
 const MongoClient = require('mongodb').MongoClient;
 const app = express();
 const PORT = 333;
@@ -8,6 +9,10 @@ require('dotenv').config();
 app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
+
+app.use(expressLayouts);
+
+app.set('layout', 'layouts/layout')
 
 app.set('views', './views')
 
@@ -22,7 +27,7 @@ MongoClient.connect(dbConnectionString)
             app.get("/", (request, response) => {
                 languagesCollection.find().toArray()
                 .then(result => {
-                    response.render('index', { content: result[0].content.eng });
+                    response.render('layouts/layout', { content: result[0].content.eng });
                 })
                 .catch(err => console.error(err));
             })
@@ -31,7 +36,7 @@ MongoClient.connect(dbConnectionString)
                 languagesCollection.find().toArray()
                     .then(result => {
                         console.log("Pt-br rendered")
-                        res.render('index', { content: result[0].content.pt })
+                        res.render('layouts/layout', { content: result[0].content.pt })
                     })
                     .catch(err => console.error(err));
             })
