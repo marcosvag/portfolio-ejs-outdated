@@ -1,0 +1,10 @@
+<section id="about" class="max-WH centerXY">
+    <div id="about-container" class="flex centerXY directionCollumn">
+      <header><h2 id="about-title"><%= content["aboutSection"]["title"]%></h2></header>
+    <% content["aboutSection"]["aboutInfo"].forEach(el => { %> 
+        <p class="about-info">
+            <%= el %>
+        </p>
+    <% }) %>
+    </div>
+  </section>

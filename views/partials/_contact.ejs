@@ -1,0 +1,39 @@
+<section id="contact" class="centerXY max-WH">
+    <div id="contact-container" class="flex centerXY directionCollumn">
+      <header><h2 id="contact-title"><%= content["contactSection"]["title"] %></h2></header>
+      <% content["contactSection"]["contactPhrase"].forEach( (el, index) => { %>
+      <p class="centerText contact-phrase">
+        <%= el %> <% if(index == 1){%><%- " <strong>marcosag.dev@gmail.com</strong>" %><%}%></p>
+      <% }) %>
+      <form
+        action="https://formsubmit.co/marcosag.dev@gmail.com"
+        method="POST"
+        id="contact-form"
+        class="flex centerXY directionCollumn"
+      >
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required
+          placeholder="<%= content["contactSection"]["formPlaceholder"][0] %>"
+        />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          required
+          placeholder="<%= content["contactSection"]["formPlaceholder"][1] %>"
+        />
+        <textarea
+          name="message"
+          id="message"
+          cols="24"
+          rows="9"
+          required
+          placeholder="<%= content["contactSection"]["formPlaceholder"][2] %>"
+        ></textarea>
+        <button type="submit" class="flex centerXY"><%= content["contactSection"]["button"] %></button>
+      </form>
+    </div>
+  </section>

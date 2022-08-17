@@ -1,0 +1,28 @@
+<section id="projects" class="centerXY max-WH directionCollumn">
+    <header><h2 id="projects-title"><%= content["projectsSection"]["title"] %></h2></header>
+    <div id="projects-container">
+        <% for(let e = 0; e < content["projectsSection"]["projects"].length; e++) { %>
+      <div class="flex directionCollumn project-container">
+        <img
+          src="<%= content["projectsSection"]["projects"][e]["img"] %>"
+          alt=""
+        />
+        <span class="project-description-container flex centerXY directionCollumn">
+          <ul class="tools-list flex centerXY">
+            <% content["projectsSection"]["projects"][e]["tools"].forEach(el => { %>
+                 <li><i class="fa-brands <%= el %> fa-xl" ></i></li> 
+            <% }) %>
+          </ul>
+          <p class="project-description" tabindex="0"> <%= content["projectsSection"]["projects"][e]["projectDescription"] %></p></span
+        >
+        <span class="project-links flex centerXY">
+          <a href="<%= content["projectsSection"]["projects"][e]["links"][0] %>" target="_blank">
+            <i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+          </a>
+          <a href="<%= content["projectsSection"]["projects"][e]["links"][1] %>" target="_blank"class="see-live"> See Live </a>
+        </span>
+      </div>
+      <%}%>
+    </div>
+    <a href="https://github.com/marcosvag" target="_blank" id="see-more"><span><%= content["projectsSection"]["more"] %></span></a>
+  </section>
