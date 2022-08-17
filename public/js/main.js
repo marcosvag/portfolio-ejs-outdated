@@ -51,11 +51,7 @@ document.body.addEventListener("keydown", keyboardEvents);
 function mouseEvents(event) {
   if (event.target.id == "theme") {
     switchTheme();
-  }
-  else if (event.target.id == "pt" || event.target.id == "en") {
-    switchLanguage(event); 
-  }
-  else if (
+  }else if (!event.target.classList.contains('language') &&
     !event.target.classList.contains("active") &&
     event.target.classList.contains("menu-item")
   ) {
@@ -78,20 +74,6 @@ function switchTheme() {
   } else {
     theme.classList = "fa-solid fa-moon menu-item centerXY";
   }
-}
-
-async function switchLanguage(event) {
-  const element = event.target;
-  try {
-    console.log(location.pathname)
-    if (location.pathname !== `/${element.id == "en" ? "" : "pt"}`) {
-      await fetch(`${element.id == "en" ? "" : "pt"}`);
-      window.history.pushState("", "", `${element.id == "en" ? "/" : "/pt"}`)
-      location.reload();
-      }
-    } catch (error) {
-      console.error(error)
-    }
 }
 
 function renderOldInfo() {
