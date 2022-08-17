@@ -96,6 +96,6 @@ async function switchLanguage(event) {
 
 function renderOldInfo() {
   location.pathname == "/" ? document.querySelector("#en").classList.add("active") : document.querySelector("#pt").classList.add("active");
-  if(localStorage.getItem("theme") !== null && localStorage.getItem("theme") == "false") switchTheme();
+  if(localStorage.getItem("theme") !== null && localStorage.getItem("theme") == "true") switchTheme();
 }
 renderOldInfo()
