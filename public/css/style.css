@@ -86,13 +86,7 @@
     text-decoration: underline;
     text-decoration-color: var(--first-color);
   }
-  #pt {
-    float: left;
-  }
-  #en {
-    float: right;
-  }
-  #home-container {
+ #home-container {
     max-width: 800px;
     margin: 0 15px 0 15px;
   }
@@ -135,7 +129,7 @@
   }
   .project-container {
     align-items: center;
-    height: 500px;
+    height: 520px;
     border-radius: 10px;
     background-color: var(--second-color);
   }
@@ -272,9 +266,12 @@
       max-width: 80%;
     }
   }
-  @media (max-width: 310px) {
+  @media (max-width: 382px) {
     nav {
       font-size: 12px;
+    }
+    .menu-item{
+      padding: 5px;
     }
     h1 {
       font-size: 25px;
