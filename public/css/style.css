@@ -235,13 +235,13 @@
   }
   @media (max-width: 1041px), (max-height: 900px) {
     h1 {
-      font-size: 28px;
+      font-size: 30px;
     }
     h2 {
-      font-size: 24px;
+      font-size: 28px;
     }
     p{
-      font-size: 14px;
+      font-size: 18px;
     }
     #projects-title , #about-title {
       margin-block-start: 2.85em;
