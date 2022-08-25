@@ -283,6 +283,9 @@
       font-size: 15px;
       max-width: 80%;
     }
+    .about-info{
+      align-self: inherit;
+    }
   }
   @media (max-height: 416px) {
     h1 {
