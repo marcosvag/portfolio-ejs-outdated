@@ -141,7 +141,7 @@
   }
   .project-container img {
     width: 90%;
-    height: 150px;
+    height: 200px;
     margin-top: 10px; 
     border-radius: 5px;
   }
@@ -200,26 +200,24 @@
     width: 100%;
     border-radius: 30px;
   }
-  #contact-form input {
+  #contact-form input, #contact-form textarea {
     width: 100%;
     padding: 6px 10px 6px 10px;
     border-style: none;
+    font-size: 18px;
+  }
+  #contact-form input{
     border-radius: 5px;
     margin-bottom: 0.5rem;
-    font-size: 18px;
   }
   #contact-form textarea {
-    width: 100%;
-    padding: 6px 10px 6px 10px;
-    border-style: none;
     border-radius: 10px;
     margin-bottom: 3em;
-    font-size: 18px;
-  }
+   }
   #contact-form button {
     border-style: none;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     padding: 15px;
     background-color: var(--second-color);
