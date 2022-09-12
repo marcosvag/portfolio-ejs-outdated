@@ -3,10 +3,12 @@
     <div id="projects-container">
         <% for(let e = 0; e < content["projectsSection"]["projects"].length; e++) { %>
       <div class="flex directionCollumn project-container">
+        <div class="image-container">
         <img
           src="<%= content["projectsSection"]["projects"][e]["img"] %>"
           alt=""
         />
+      </div>
         <span class="project-description-container flex centerXY directionCollumn">
           <ul class="tools-list flex centerXY">
             <% content["projectsSection"]["projects"][e]["tools"].forEach(el => { %>
